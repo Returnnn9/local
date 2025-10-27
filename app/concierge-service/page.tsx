@@ -165,7 +165,7 @@ export default function ConciergeServicePage() {
       <main className="flex-1 container mx-auto px-4 py-8 animate-fade-in">
         {/* Page Header with Currency Switcher */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-white animate-slide-in-left">Консьерж-сервис в Дубае</h1>
+          <h1 className="text-3xl md:text-2xl text-white animate-slide-in-left">Консьерж-сервис</h1>
           <div className="flex items-center gap-4 animate-slide-in-right">
             <span className="text-[#999] text-sm font-medium">Валюта:</span>
             <div className="flex bg-[#141414] border border-[#333] rounded-lg overflow-hidden">
@@ -189,36 +189,9 @@ export default function ConciergeServicePage() {
           </div>
         </div>
 
-        <p className="text-[#999] text-center max-w-4xl mx-auto mb-12 leading-relaxed animate-fade-in-up">
-          Ваш персональный проводник в мире экскурсий, музеев, аквапарков и лучших развлечений города. Индивидуальный
-          подход, забота о деталях и полное сопровождение на каждом этапе отдыха.
-        </p>
-
+      
         {/* Categories Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
-          {categories.map((category, index) => (
-            <div
-              key={category.id}
-              onClick={() => handleCategoryClick(category.id)}
-              className="relative h-24 rounded-xl overflow-hidden cursor-pointer group animate-scale-in"
-              style={{ animationDelay: `${index * 50}ms` }}
-            >
-              <Image
-                src={category.image || "/placeholder.svg"}
-                alt={category.label}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-300" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="text-white font-bold text-lg text-center px-2 drop-shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  {category.label}
-                </h3>
-              </div>
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#9dc21b] rounded-xl transition-colors duration-300" />
-            </div>
-          ))}
-        </div>
+       
 
         {/* Search Bar */}
         <div className="max-w-xl mb-8 animate-slide-in-up">
