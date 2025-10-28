@@ -1,36 +1,65 @@
 "use client"
 
-import { Header } from "@/components/Header"
-import { Footer } from "@/components/Footer"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { useState } from "react"
 import Image from "next/image"
 
-// Хелпер для безопасного URL (поддержка пробелов и нестандартных путей)
+// Helper for safe URLs (supports spaces and unusual paths)
 const getSrcSafe = (src: any) => {
   if (typeof src === "object" && src?.src) return src.src
-  if (typeof src !== "string") return src 
+  if (typeof src !== "string") return src
   return src.split("/").map(encodeURIComponent).join("/")
 }
 
-// Импорты изображений
-import BMWM3Promo from "@/images/bmw-m3/bmw-m3-promo.jpg"
-import BMWM3_0976 from "@/images/bmw-m3/img_0976.jpg"
-import BMWM3_0978 from "@/images/bmw-m3/img_0978.jpg"
-import BMWM3_9973 from "@/images/bmw-m3/img_9973.jpg"
-import BMWM3_9974 from "@/images/bmw-m3/img_9974.jpg"
-import BMWM3_9975 from "@/images/bmw-m3/img_9975.jpg"
-import BMWM3_9979 from "@/images/bmw-m3/img_9979.jpg"
-import BMWM3_9981 from "@/images/bmw-m3/img_9981.jpg"
-import BMWM4Cabrio from "@/images/bmw_m4c/center.jpg"
-// Исправлено: корректное имя файла для BMW M340-поста
-import BMWM340 from "@/images/bmw-m340/bmw-m340-promo.jpg"
-import BMWX3M from "@/images/bmw-x3m/bmw-x3m-promo.jpg"
-import MERCEDESS580Long from "@/images/mercedes-s580-long/mercedes-s580-long-promo.jpg"
-import PORSCHE911GT3 from "@/images/porsche-911-gt3/porsche-911-gt3-promo.jpg"
-import PORSCHECayenne from "@/images/porsche-cayenne-coupe-turbo-gt/porsche-cayenne-coupe-turbo-gt-promo.jpg"
-import TOYOTASupra from "@/images/toyota-supra/toyota-supra-promo.jpg"
+// Image imports
+import BMWM3Promo from "@/images/BMW M3/BMW M3-promo.jpg"
+import BMWM3_0976 from "@/images/BMW M3/IMG_0976.jpg"
+import BMWM3_0978 from "@/images/BMW M3/IMG_0978.jpg"
+import BMWM3_9973 from "@/images/BMW M3/IMG_9973.jpg"
+import BMWM3_9974 from "@/images/BMW M3/IMG_9974.jpg"
+import BMWM3_9975 from "@/images/BMW M3/IMG_9975.jpg"
+import BMWM3_9979 from "@/images/BMW M3/IMG_9979.jpg"
+import BMWM3_9981 from "@/images/BMW M3/IMG_9981.jpg"
 
-// Данные автомобилей
+import BMWM4C_CENTER from "@/images/BMW_M4C/CENTER.JPG"
+import BMWM4C_1743 from "@/images/BMW_M4C/IMG_1743.JPG"
+import BMWM4C_1744 from "@/images/BMW_M4C/IMG_1744.JPG"
+import BMWM4C_1745 from "@/images/BMW_M4C/IMG_1745.JPG"
+import BMWM4C_1746 from "@/images/BMW_M4C/IMG_1746.JPG"
+import BMWM4C_1747 from "@/images/BMW_M4C/IMG_1747.JPG"
+import BMWM4C_1748 from "@/images/BMW_M4C/IMG_1748.JPG"
+import BMWM4C_1749 from "@/images/BMW_M4C/IMG_1749.JPG"
+import BMWM4C_1750 from "@/images/BMW_M4C/IMG_1750.JPG"
+import BMWM4C_1751 from "@/images/BMW_M4C/IMG_1751.JPG"
+import BMWM4C_1752 from "@/images/BMW_M4C/IMG_1752.JPG"
+import BMWM4C_1753 from "@/images/BMW_M4C/IMG_1753.JPG"
+import BMWM4C_1754 from "@/images/BMW_M4C/IMG_1754.JPG"
+import BMWM4C_1755 from "@/images/BMW_M4C/IMG_1755.JPG"
+import BMWM4C_1756 from "@/images/BMW_M4C/IMG_1756.JPG"
+
+import BMWM340_PROMO from "@/images/BMW M340/BMW M340-promo.jpg"
+import BMWM340_1775 from "@/images/BMW M340/IMG_1775.JPG"
+import BMWM340_1776 from "@/images/BMW M340/IMG_1776.JPG"
+import BMWM340_1777 from "@/images/BMW M340/IMG_1777.JPG"
+import BMWM340_1778 from "@/images/BMW M340/IMG_1778.JPG"
+import BMWM340_1779 from "@/images/BMW M340/IMG_1779.JPG"
+import BMWM340_1780 from "@/images/BMW M340/IMG_1780.JPG"
+import BMWM340_1781 from "@/images/BMW M340/IMG_1781.JPG"
+import BMWM340_1782 from "@/images/BMW M340/IMG_1782.JPG"
+import BMWM340_1783 from "@/images/BMW M340/IMG_1783.JPG"
+import BMWM340_1784 from "@/images/BMW M340/IMG_1784.JPG"
+import BMWM340_1785 from "@/images/BMW M340/IMG_1785.JPG"
+import BMWM340_1786 from "@/images/BMW M340/IMG_1786.JPG"
+import BMWM340_1787 from "@/images/BMW M340/IMG_1787.JPG"
+
+import BMWX3M from "@/images/BMW X3M/BMW X3M-promo.jpg"
+import MERCEDESS580Long from "@/images/MERCEDES S580 Long/MERCEDES S580 Long-promo.jpg"
+import PORSCHE911GT3 from "@/images/PORSCHE 911 GT3/PORSCHE 911 GT3-promo.jpg"
+import PORSCHECayenne from "@/images/PORSCHE Cayenne Coupe Turbo GT/PORSCHE Cayenne Coupe Turbo GT-promo.jpg"
+import TOYOTASupra from "@/images/TOYOTA Supra/TOYOTA Supra-promo.jpg"
+
+// Car data
 const cars = [
   {
     brand: "BMW",
@@ -43,16 +72,47 @@ const cars = [
   {
     brand: "BMW",
     model: "M4 Cabrio",
-    image: BMWM4Cabrio,
-    images: [BMWM4Cabrio],
+    image: BMWM4C_CENTER,
+    images: [
+      BMWM4C_1750,
+      BMWM4C_1751,
+      BMWM4C_1752,
+      BMWM4C_1753,
+      BMWM4C_1754,
+      BMWM4C_1755,
+      BMWM4C_CENTER,
+      BMWM4C_1756,
+      BMWM4C_1743,
+      BMWM4C_1744,
+      BMWM4C_1745,
+      BMWM4C_1746,
+      BMWM4C_1747,
+      BMWM4C_1748,
+      BMWM4C_1749
+    ],
     description: "Кабриолет BMW M4 — яркие эмоции и стиль на любой дороге.",
     prices: { 1: 1400, 3: 1270, 7: 1130, 30: 820 },
   },
   {
     brand: "BMW",
     model: "M340",
-    image: BMWM340,
-    images: [BMWM340],
+    image: BMWM340_PROMO,
+    images: [
+      BMWM340_1782,
+      BMWM340_1783,
+      BMWM340_PROMO,
+      BMWM340_1775,
+      BMWM340_1776,
+      BMWM340_1777,
+      BMWM340_1778,
+      BMWM340_1784,
+      BMWM340_1785,
+      BMWM340_1786,
+      BMWM340_1787,
+      BMWM340_1779,
+      BMWM340_1780,
+      BMWM340_1781,
+    ],
     description: "BMW M340: премиум-класс и драйв в исполнении легендарной тройки.",
     prices: { 1: 1000, 3: 890, 7: 790, 30: 600 },
   },
