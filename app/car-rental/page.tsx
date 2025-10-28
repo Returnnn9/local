@@ -1,7 +1,7 @@
 "use client"
 
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import { Header } from "@/components/Header"
+import { Footer } from "@/components/Footer"
 import { useState } from "react"
 import Image from "next/image"
 
@@ -13,22 +13,22 @@ const getSrcSafe = (src: any) => {
 }
 
 // Импорты изображений
-import BMWM3Promo from "@/images/BMW M3/BMW M3-promo.jpg"
-import BMWM3_0976 from "@/images/BMW M3/IMG_0976.jpg"
-import BMWM3_0978 from "@/images/BMW M3/IMG_0978.jpg"
-import BMWM3_9973 from "@/images/BMW M3/IMG_9973.jpg"
-import BMWM3_9974 from "@/images/BMW M3/IMG_9974.jpg"
-import BMWM3_9975 from "@/images/BMW M3/IMG_9975.jpg"
-import BMWM3_9979 from "@/images/BMW M3/IMG_9979.jpg"
-import BMWM3_9981 from "@/images/BMW M3/IMG_9981.jpg"
-import BMWM4Cabrio from "@/images/BMW_M4C/CENTER.jpg"
+import BMWM3Promo from "@/images/bmw-m3/bmw-m3-promo.jpg"
+import BMWM3_0976 from "@/images/bmw-m3/img_0976.jpg"
+import BMWM3_0978 from "@/images/bmw-m3/img_0978.jpg"
+import BMWM3_9973 from "@/images/bmw-m3/img_9973.jpg"
+import BMWM3_9974 from "@/images/bmw-m3/img_9974.jpg"
+import BMWM3_9975 from "@/images/bmw-m3/img_9975.jpg"
+import BMWM3_9979 from "@/images/bmw-m3/img_9979.jpg"
+import BMWM3_9981 from "@/images/bmw-m3/img_9981.jpg"
+import BMWM4Cabrio from "@/images/bmw_m4c/center.jpg"
 // Исправлено: корректное имя файла для BMW M340-поста
-import BMWM340 from "@/images/BMW M340/BMW M340-promo.jpg"
-import BMWX3M from "@/images/BMW X3M/BMW X3M-promo.jpg"
-import MERCEDESS580Long from "@/images/MERCEDES S580 Long/MERCEDES S580 Long-promo.jpg"
-import PORSCHE911GT3 from "@/images/PORSCHE 911 GT3/PORSCHE 911 GT3-promo.jpg"
-import PORSCHECayenne from "@/images/PORSCHE Cayenne Coupe Turbo GT/PORSCHE Cayenne Coupe Turbo GT-promo.jpg"
-import TOYOTASupra from "@/images/TOYOTA Supra/TOYOTA Supra-promo.jpg"
+import BMWM340 from "@/images/bmw-m340/bmw-m340-promo.jpg"
+import BMWX3M from "@/images/bmw-x3m/bmw-x3m-promo.jpg"
+import MERCEDESS580Long from "@/images/mercedes-s580-long/mercedes-s580-long-promo.jpg"
+import PORSCHE911GT3 from "@/images/porsche-911-gt3/porsche-911-gt3-promo.jpg"
+import PORSCHECayenne from "@/images/porsche-cayenne-coupe-turbo-gt/porsche-cayenne-coupe-turbo-gt-promo.jpg"
+import TOYOTASupra from "@/images/toyota-supra/toyota-supra-promo.jpg"
 
 // Данные автомобилей
 const cars = [
