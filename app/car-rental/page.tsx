@@ -15,7 +15,7 @@ import BMWM3_9975 from "@/images/BMW M3/IMG_9975.jpg"
 import BMWM3_9979 from "@/images/BMW M3/IMG_9979.jpg"
 import BMWM3_9981 from "@/images/BMW M3/IMG_9981.jpg"
 
-import BMWM4Cabrio from "@/images/BMW M4 Cabrio/M4 Cabrio-promo.jpg"
+import BMWM4Cabrio from "@/images/BMW_M4Cabrio/M4_Cabrio-promo.jpg"
 
 
 
